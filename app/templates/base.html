@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data</title>
+
     <link rel="stylesheet" type="text/css" href="static/assets/style.css">
     <link rel="stylesheet" type="text/css" href="static/assets/animate.css">
     <link rel="stylesheet" type="text/css" href="static/assets/slider.css">
@@ -19,7 +20,8 @@
     
 </head>
 <body>
-    {% block main %}{% endblock %}
-    <div class="test">test</div>
+    {% include 'header.html' %}
+    {% block main %}
+    {% endblock %}
 </body>
 </html>
