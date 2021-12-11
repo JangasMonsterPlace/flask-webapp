@@ -46,7 +46,7 @@ def upload_files_route():
                 
             upload_file_to_gcs(filename, file_data)
 
-            return render_template('upload.html')
+            return render_template('upload.html', msg="File uploaded successfully")
 
         else:
 
