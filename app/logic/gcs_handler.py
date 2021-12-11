@@ -9,7 +9,7 @@ class GCSHandler:
         self.BUCKET_NAME = settings.GCS_BUCKET_NAME
         self.bucket = self.storage_client.get_bucket(settings.GCS_BUCKET_NAME)
 
-    def list_contents(self, prefix = ""):
+    def list_contents(self, prefix = "data"):
 
         blob_name_list = []
 
