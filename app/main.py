@@ -1,5 +1,7 @@
 from flask import Flask
 from dotenv import load_dotenv
+from flask_restful import Api
+from controller.FileController import FileController
 
 load_dotenv()
 
@@ -8,11 +10,9 @@ app = Flask(
     static_folder='static/',
     template_folder='templates/'
 )
+api = Api(app)
 
-
-@app.route("/")
-def hello_world():
-    return "<p>Let's create an awesome app!!</p>"
+api.add_resource(FileController, '/api/files')
 
 
 if __name__ == "__main__":

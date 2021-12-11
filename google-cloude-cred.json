@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "altair-330820",
+    "private_key_id": "36528fd945fd471722e62c50176e5c100fc7376d",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCryY8KOO1lMZQl\nJGllZevGT7mcdZ8X77f6RBA6xtS0CxfYY5LyZXAipFnwmUhFJBtoGDS38I/1bBK+\nqGIMkX0OQaJ8uaCR+G7xeM2bj97pyt8ktGkrdQ2HzRLYbAoFt0+RkQNlDMJYOKV8\nClKc8WegluMB6WsAMLYIYctPhk5nrzz/VIZAzuN4BjKMeeyJvndRK6RDJVh17UW/\nzqJsALywJHbogzyEmbpijBtTPE95pi9HWXcD4/BhFkk6R4Iag893J7MidajpSEeT\nIt+VJfeSCa8VaVmSu0MSje6semEga/fqcJh0XwrZtLKCylbIEGEtuBcK5p3dmqhf\nXBTQHqi1AgMBAAECggEAApHQjwcV9sVvx8E/k4toPb5zvzVIZjvCntg4ylN7qAVi\nDtPcEiS8finC/KUJhM5xW7SM/IYsXEmIqD7T8W5ifMpni06qUIFzHpW/gZWv1tBr\n8Q+C/Gof6mM1AA6+dNWh0SjmcGY19ZeqhgX2tJYTbKTR8kJGRJApKn8hlhsJfjLr\n23Kr+2ZUUXnN1RPiM7EYFTY+TFl9zqgyEh/9RG6m2PiZu2a5EB/RZy8W/7FjNsxo\nRBuuFQr6cs0BlMc2e+8lKxINGfjCcjxeLF1e89ykhqvjv3cJ4oP0zOjOAPMmB0WV\n1F4PPJpjQWEQJMWWDJjL4aabeyy4Vv7ciQsXL97Z8QKBgQDdlZY2dnLFpRQqd+7S\nqsfIyPyNDsp+V2YXeZug/LiYUi0iSCuvCPXcTW4mXLlZ//lzYlq6hsmCkqz2aEGB\nyr0keFx2axBw34DLaHUJ5Lg/pQzWmZE74vNxu4XMgm5ePK2whTpUZ4ik35/glnG4\nXY/3J8NYR5q+VeGFClRoVfsmuQKBgQDGd/6LoElV4/Cr5qf2fgcdSCT7UO1CzKiS\n6fkwsjv6XnnS3PclvnjS4P6SYqezOgCLZVyYGvMGRJdXhmx1RBhhI7b0HLrKkU9A\nbzfK+UNWfTAGYPMoU8TCGRzxeQDduTMCmJuqy09YYUE1aQJAuMflI/2W8WoIFPMo\nAWDszqKT3QKBgQC+40DWhk/1aHLo6wz4u1sE4/B9bEKReKVgj8i8dTppLlHneJj5\nXxS+xo2fyr16hQPWnOJgUgGC1OzgEYxtTcSHiJDPCwjM1B5WHRTGgx0e5wcaUI1H\nNApY7h0jwzFlSYyvxvYrBE45CtTmW3R4SVHer4ifon/yfHWdcPqqL3f/MQKBgQCm\nk8RDsM6clmpD/Z5wFqsl+o1/mhbpgBjk5hhOtOn+ZBlf0DJnrYx/gnRorQEQPtiC\nJxsmV0gutJdJ0PtrGTJVJcLC9PIaXwfjjvWHGNtZ1kzerbSo3lZAiw9t5R/C+VRF\nE41kNqxsA4TVrUNEy1KLkj+f1xQloF/N7gpJ980gyQKBgDXEsZCRogd/vlqSTUgF\nyCDxttbLglM1TNg9N8JzrcP8qW4AvL7cuTPIOpAe92kp4KjgejYN2l3JHo/pWjdg\ntCB4bYRNBKJDNDXEIhiD0KDFpAz0RqDVIKuOsgxB5YRwBHR4J8Nh+KDThzqEpx4O\nTBqedXnVeqWXdGi81RWh0cLF\n-----END PRIVATE KEY-----\n",
+    "client_email": "altair-janga@altair-330820.iam.gserviceaccount.com",
+    "client_id": "118220652836197875238",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/altair-janga%40altair-330820.iam.gserviceaccount.com"
+  }
