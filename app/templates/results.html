@@ -1,39 +1,77 @@
-{% extends 'base.html' %} {% block main %}
+{% extends 'base.html' %} {% from 'components/inline_category_form.html' import inline_category_form %} {% block main %}
 <div class="container">
   {% if data.job != None %}
   <div class="row">
-      <h1>Job with id #{{data.job}}</h1>
-      <h3>Next Execution: {{data.job}}</h3>
+    <h1 id="job-id-heading" data-job-id="{{data.job}}">Job with id #{{data.job}}</h1>
+    <h3>Next Execution: {{data.job}}</h3>
   </div>
   <div class="row">
-      <h2>Ngrams</h2>
+    <h2>Ngrams</h2>
   </div>
   <div class="row">
-      <div class="col">
-          <div class="ngram_two_dimensions">
-              <h2>Two dimensions</h2>
-              <ul class="list-group">
-                  {% for ngram in data.ngrams.dimension_two %}
-                  <li class="list-group-item">
-                    {{ngram.sequence}}: {{ngram.frequency}}
-                  </li>
-                  {% endfor %}
-                </ul>
-          </div>
-        </div>
-        <div class="col">
-            <div class="ngram_three_dimensions">
-                <h3>Three dimensions</h3>
-                <ul class="list-group">
-                    {% for ngram in data.ngrams.dimension_three %}
-                    <li class="list-group-item">
-                        {{ngram.sequence}}: {{ngram.frequency}}
-                    </li>
-                    {% endfor %}
-                  </ul>
-            </div>
-        </div>
+    <div class="col">
+      <div class="ngram_two_dimensions">
+        <h2>Two dimensions</h2>
+        <ul class="list-group">
+          {% for ngram in data.ngrams.dimension_two %}
+          <li class="list-group-item">{{ngram.sequence}}: {{ngram.frequency}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="ngram_three_dimensions">
+        <h3>Three dimensions</h3>
+        <ul class="list-group">
+          {% for ngram in data.ngrams.dimension_three %}
+          <li class="list-group-item">{{ngram.sequence}}: {{ngram.frequency}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <h2>LDA</h2>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="category-nav-link nav-item nav-link active" id="cat-one-tab" data-cat-id="1" data-toggle="tab" href="#cat-one" role="tab" aria-controls="cat-one" aria-selected="true">Category 1</a>
+        <a class="category-nav-link av-item nav-link" id="cat-two-tab" data-cat-id="2" data-toggle="tab" href="#cat-two" role="tab" aria-controls="cat-two" aria-selected="false">Category 2</a>
+        <a class="category-nav-link nav-item nav-link" id="cat-three-tab" data-cat-id="3" data-toggle="tab" href="#cat-three" role="tab" aria-controls="cat-three" aria-selected="false">Category 3</a>
+        <a class="category-nav-link nav-item nav-link" id="cat-four-tab" data-cat-id="4" data-toggle="tab" href="#cat-four" role="tab" aria-controls="cat-four" aria-selected="false">Category 4</a>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="cat-one" role="tabpanel" aria-labelledby="cat-one-tab">
+        {{inline_category_form(data.job, 1)}}
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="cat-two" role="tabpanel" aria-labelledby="cat-two-tab">{{inline_category_form(data.job, 2)}}</div>
+      <div class="tab-pane fade" id="cat-three" role="tabpanel" aria-labelledby="cat-three-tab">{{inline_category_form(data.job, 3)}}</div>
+      <div class="tab-pane fade" id="cat-four" role="tabpanel" aria-labelledby="cat-four-tab">{{inline_category_form(data.job, 4)}}</div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   {% else %} job is in creation {% endif %}
 </div>
 {% endblock main %}

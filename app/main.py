@@ -97,10 +97,19 @@ def list_files():
     return render_template('files_list.html', data=data)
 
 
-@app.route('/lda')
-def lda():
-    # data = {"files": get_list_files()}
-    return render_template('lda.html')
+@app.route('/name_lda')
+def name_lda():
+       data = {
+            "category_id": request.form["from_date"],
+            "job_id": request.form["to_date"],
+            "name": request.form["source_type"],
+        }
+
+@app.route('/get_lda', methods=['GET'])
+def get_lda():
+    
+    return {"status": "ok"}
+
 
 
 if __name__ == "__main__":
