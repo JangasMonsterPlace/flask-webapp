@@ -9,14 +9,14 @@ def get_job(info):
     else:
         return None
 
-# def get_jobs():
-#     sql = f"SELECT * FROM jobs ORDER BY frequency LIMIT 50"
-#     _db.cur.execute(sql, (info, ))
-#     entity = _db.cur.fetchone()
-#     if entity:
-#         return entity[0]
-#     else:
-#         return None
+def get_jobs():
+    sql = f"SELECT * FROM jobs ORDER BY frequency LIMIT 50"
+    _db.cur.execute(sql)
+    entity = _db.cur.fetchall()
+    if entity:
+        return entity
+    else:
+        return None
 
 def make_job(data):
     sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"

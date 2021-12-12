@@ -1,6 +1,6 @@
 import os
 import psycopg2
-
+import psycopg2.extras
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,7 +25,7 @@ class _DB:
 
     def _connect(self):
         self.conn = psycopg2.connect(**POSTGRES)
-        self.cur = self.conn.cursor()
+        self.cur = self.conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
         self.conn.autocommit = True
 
 

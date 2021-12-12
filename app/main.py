@@ -25,9 +25,11 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/job/jobs methods=['GET'])
-# def jobs():
-#     return render_template("jobs.html")
+@app.route('/jobs', methods=['GET'])
+def jobs():
+    jobs = get_jobs()
+    data={"jobs":jobs}
+    return render_template("jobs.html", data=data)
 
 @app.route('/job/<job_id>', methods=['GET'])
 @app.route('/job', methods=['POST'])
