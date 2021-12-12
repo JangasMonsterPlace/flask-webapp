@@ -3,6 +3,7 @@
   {% if data.job != None %}
   <div class="row">
       <h1>Job with id #{{data.job}}</h1>
+      <h3>Next Execution: {{data.job}}</h3>
   </div>
   <div class="row">
       <h2>Ngrams</h2>
@@ -14,7 +15,7 @@
               <ul class="list-group">
                   {% for ngram in data.ngrams.dimension_two %}
                   <li class="list-group-item">
-                      {{ngram}}
+                    {{ngram.sequence}}: {{ngram.frequency}}
                   </li>
                   {% endfor %}
                 </ul>
@@ -26,7 +27,7 @@
                 <ul class="list-group">
                     {% for ngram in data.ngrams.dimension_three %}
                     <li class="list-group-item">
-                        {{ngram}}
+                        {{ngram.sequence}}: {{ngram.frequency}}
                     </li>
                     {% endfor %}
                   </ul>

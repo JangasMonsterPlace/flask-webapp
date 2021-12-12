@@ -61,7 +61,7 @@ def job(job_id=0):
             make_job(query_dict_str)
             job = get_job(query_dict_str)
 
-        return redirect(f"/job/{job}", code=302)
+        return redirect(f"/job/{job['id']}", code=302)
 
 
 @app.route('/ping')

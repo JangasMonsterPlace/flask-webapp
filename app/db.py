@@ -1,3 +1,4 @@
+from html import entities
 from settings import _db
 
 def get_job(info):
@@ -5,16 +6,16 @@ def get_job(info):
     _db.cur.execute(sql, (info, ))
     entity = _db.cur.fetchone()
     if entity:
-        return entity["id"]
+        return entity
     else:
         return None
 
 def get_jobs():
     sql = f"SELECT * FROM jobs ORDER BY frequency LIMIT 50"
     _db.cur.execute(sql)
-    entity = _db.cur.fetchall()
-    if entity:
-        return entity
+    entities = _db.cur.fetchall()
+    if entities:
+        return entities
     else:
         return None
 
