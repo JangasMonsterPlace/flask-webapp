@@ -46,29 +46,27 @@
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="cat-one" role="tabpanel" aria-labelledby="cat-one-tab">
       {{inline_category_form(data.job, 1)}}
-      <div class="table">
-        <table id="table_id-1" class="display">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>job id</th>
-              <th>text</th>
-              <th>date</th>
-              <th>category id</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Row 1 Data 1</td>
-              <td>Row 1 Data 2</td>
-            </tr>
-            <tr>
-              <td>Row 2 Data 1</td>
-              <td>Row 2 Data 2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table id="table_id-1" class="display">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>job id</th>
+            <th>text</th>
+            <th>date</th>
+            <th>category id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+          </tr>
+          <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="tab-pane fade" id="cat-two" role="tabpanel" aria-labelledby="cat-two-tab">
       {{inline_category_form(data.job, 2)}}

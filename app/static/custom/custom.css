@@ -30,3 +30,6 @@
   transition: unset;
   animation: unset;
 }
+table{
+  width: 100%!important;
+}
