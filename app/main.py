@@ -21,17 +21,22 @@ app.secret_key = 'supersecretkey'
 
 @app.route('/', methods=['GET'])
 def index():
+
     return render_template('index.html')
 
+
+# @app.route('/job/jobs methods=['GET'])
+# def jobs():
+#     return render_template("jobs.html")
 
 @app.route('/job/<job_id>', methods=['GET'])
 @app.route('/job', methods=['POST'])
 def job(job_id=0):
     if request.method == 'GET':
         print(job_id)
-        job = job_id
-        ngrams_dimension_two = get_ngram(job_id, 2)
-        ngrams_dimension_three = get_ngram(job_id, 3)
+        job = int(job_id)
+        ngrams_dimension_two = get_ngram(job, 2)
+        ngrams_dimension_three = get_ngram(job, 3)
         return_data = {
             "job": job,
             "ngrams": {
@@ -49,10 +54,10 @@ def job(job_id=0):
             "sentiment": request.form["sentiment"],
         }
         query_dict_str = json.dumps(data)
-        job = get_jobs(query_dict_str)
+        job = get_job(query_dict_str)
         if job == None:
             make_job(query_dict_str)
-            job = get_jobs(query_dict_str)
+            job = get_job(query_dict_str)
 
         return redirect(f"/job/{job}", code=302)
 
