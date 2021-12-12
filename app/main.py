@@ -98,7 +98,7 @@ def list_files():
 
 
 @app.route('/lda')
-def list_files():
+def lda():
     # data = {"files": get_list_files()}
     return render_template('lda.html')
 

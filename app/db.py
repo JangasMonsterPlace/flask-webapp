@@ -19,6 +19,15 @@ def get_jobs():
     else:
         return None
 
+def get_lda(job_id, topic_id):
+    sql = f""
+    _db.cur.execute(sql)
+    entities = _db.cur.fetchall()
+    if entities:
+        return entities
+    else:
+        return None
+
 def make_job(data):
     sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"
     _db.cur.execute(sql, (data, ))
