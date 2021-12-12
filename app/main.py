@@ -97,5 +97,11 @@ def list_files():
     return render_template('files_list.html', data=data)
 
 
+@app.route('/lda')
+def list_files():
+    # data = {"files": get_list_files()}
+    return render_template('lda.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
