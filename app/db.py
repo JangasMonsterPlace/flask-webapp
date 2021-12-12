@@ -23,6 +23,15 @@ def get_jobs():
             continue
         yield entity
 
+def get_hashtag_jobs():
+    sql = f"SELECT * FROM jobs WHERE type='hashtag' ORDER BY frequency"
+    _db.cur.execute(sql)
+    entity = _db.cur.fetchall()
+    if entity:
+        return entity
+    else:
+        return None
+
 
 def get_lda(job_id, topic_id):
     sql = f"SELECT * FROM ldas WHERE job_id=%s AND topic_id=%s ORDER BY timestamp DESC LIMIT 100"
@@ -44,7 +53,7 @@ def name_lda(job_id, topic_id, name, description):
     else:
         sql_insert = f"INSERT INTO lda_interpretation (job_id, topic_id, title, description) VALUES (%s, %s, %s, %s)"
         _db.cur.execute(sql_insert, (job_id, topic_id, name, description,))
-        
+
     
 
 
@@ -58,9 +67,9 @@ def get_name_lda(job_id, category_id):
         return None
 
 
-def make_job(data):
-    sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"
-    _db.cur.execute(sql, (data, ))
+def make_job(data, frequency=120, _type="nlp"):
+    sql = f"INSERT INTO jobs (type,info,frequency) VALUES (%s,%s,%s)"
+    _db.cur.execute(sql, (_type, data, frequency))
 
 
 def get_ngram(prev_match_id, dimension):
