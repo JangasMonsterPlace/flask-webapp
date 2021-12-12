@@ -184,7 +184,7 @@ def get_tweets_by_keywords():
             parsed_buckets["values"].append(b['doc_count'])
 
     except Exception as e:
-        buckets = []
+        pass
 
     return jsonify({
         "raw_text_data": data,
