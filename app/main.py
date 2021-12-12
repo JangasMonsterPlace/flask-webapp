@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 from logic.upload_files import upload_file_to_gcs
 from logic.list_files import get_list_files
-
+from settings import _db
 load_dotenv()
 
 app = Flask(
@@ -16,7 +16,6 @@ app.secret_key = 'supersecretkey'
 
 @app.route('/')
 def index():
-
     return render_template('index.html')
 
 @app.route('/ping')
@@ -59,6 +58,14 @@ def list_files():
     data = get_list_files()
 
     return render_template('files_list.html', data=data)
+
+# @app.route('/data',  methods=['POST', 'GET'])
+# def jobs():
+    
+#     return render_template('files_list.html', data=data)
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

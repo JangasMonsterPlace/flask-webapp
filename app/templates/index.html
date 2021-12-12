@@ -1,5 +1,592 @@
 {% extends "base.html" %} {% block main %} Welcome to the homepage!
+<div class="slider-area">
+  <div class="slider">
+    <div id="bg-slider" class="owl-carousel owl-theme" style="opacity: 1; display: block">
+      <div class="owl-wrapper-outer">
+        <div
+          class="owl-wrapper owl-origin"
+          style="width: 11418px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px); transform-origin: 951.5px center; perspective-origin: 951.5px center"
+        >
+          <div class="owl-item owl-fade-in" style="width: 1903px">
+            <div class="item"><img src="static/assets/img/slide1/slider-image-1.jpg" alt="GTA V" /></div>
+          </div>
+          <div class="owl-item" style="width: 1903px">
+            <div class="item"><img src="static/assets/img/slide1/slider-image-2.jpg" alt="The Last of us" /></div>
+          </div>
+          <div class="owl-item owl-fade-out" style="width: 1903px; position: relative; left: -3806px">
+            <div class="item"><img src="static/assets/img/slide1/slider-image-1.jpg" alt="GTA V" /></div>
+          </div>
+        </div>
+      </div>
 
-<a href="/upload_file">Upload page</a>
-<a href="/list_files">list all available files</a>
+      <div class="owl-controls clickable">
+        <div class="owl-pagination">
+          <div class="owl-page active"><span class=""></span></div>
+          <div class="owl-page"><span class=""></span></div>
+          <div class="owl-page"><span class=""></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slider-content">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+        <h2>property Searching Just Got So Easy</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laboriosam velit adipisci quibusdam aliquam teneturo!</p>
+        <div class="search-form wow pulse animated" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
+          <form action="" class="form-inline">
+            <button class="btn toggle-btn" type="button"><i class="fa fa-bars"></i></button>
+
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Key word" />
+            </div>
+            <div class="form-group">
+              <div class="btn-group bootstrap-select">
+                <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="lunchBegins" title="Select your city">
+                  <span class="filter-option pull-left">Select your city</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span>
+                </button>
+                <div class="dropdown-menu open">
+                  <div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" /></div>
+                  <ul class="dropdown-menu inner" role="menu">
+                    <li data-original-index="1">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">New york, CA</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="2">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Paris</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="3">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Casablanca</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="4">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Tokyo</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="5">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Marraekch</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="6">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">kyoto , shibua</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                  </ul>
+                </div>
+                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city" tabindex="-98">
+                  <option class="bs-title-option" value="">Select your city</option>
+
+                  <option>New york, CA</option>
+                  <option>Paris</option>
+                  <option>Casablanca</option>
+                  <option>Tokyo</option>
+                  <option>Marraekch</option>
+                  <option>kyoto , shibua</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="btn-group bootstrap-select show-tick form-control">
+                <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="basic" title="-Status-">
+                  <span class="filter-option pull-left"> -Status- </span>&nbsp;<span class="bs-caret"><span class="caret"></span></span>
+                </button>
+                <div class="dropdown-menu open">
+                  <ul class="dropdown-menu inner" role="menu">
+                    <li data-original-index="0" class="selected">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text"> -Status- </span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="1">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Rent </span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="2">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">Boy</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                    <li data-original-index="3">
+                      <a tabindex="0" class="" style="" data-tokens="null"><span class="text">used</span><span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+                  </ul>
+                </div>
+                <select id="basic" class="selectpicker show-tick form-control" tabindex="-98">
+                  <option>-Status-</option>
+                  <option>Rent</option>
+                  <option>Boy</option>
+                  <option>used</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+
+            <div style="display: none" class="search-toggle">
+              <div class="search-row">
+                <div class="form-group mar-r-20">
+                  <label for="price-range">Price range ($):</label>
+                  <div class="sliderrange slider slider-horizontal" style="width: 100px">
+                    <div class="slider-track">
+                      <div class="slider-selection" style="left: 0%; width: 75%"></div>
+                      <div class="slider-handle round left-round" style="left: 0%"></div>
+                      <div class="slider-handle round" style="left: 75%"></div>
+                    </div>
+                    <div class="tooltip top" style="top: -14px; left: 0px">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">0 : 450</div>
+                    </div>
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[0,450]" id="price-range" style="" />
+                  </div>
+                  <br />
+                  <b class="pull-left color">2000$</b>
+                  <b class="pull-right color">100000$</b>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group mar-l-20">
+                  <label for="property-geo">Property geo (m2) :</label>
+                  <div class="sliderrange slider slider-horizontal" style="width: 100px">
+                    <div class="slider-track">
+                      <div class="slider-selection" style="left: 8.33333%; width: 66.6667%"></div>
+                      <div class="slider-handle round left-round" style="left: 8.33333%"></div>
+                      <div class="slider-handle round" style="left: 75%"></div>
+                    </div>
+                    <div class="tooltip top" style="top: -14px; left: 0px">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">50 : 450</div>
+                    </div>
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[50,450]" id="property-geo" style="" />
+                  </div>
+                  <br />
+                  <b class="pull-left color">40m</b>
+                  <b class="pull-right color">12000m</b>
+                </div>
+                <!-- End of  -->
+              </div>
+
+              <div class="search-row">
+                <div class="form-group mar-r-20">
+                  <label for="price-range">Min baths :</label>
+                  <div class="sliderrange slider slider-horizontal" style="width: 100px">
+                    <div class="slider-track">
+                      <div class="slider-selection" style="left: 41.6667%; width: 33.3333%"></div>
+                      <div class="slider-handle round left-round" style="left: 41.6667%"></div>
+                      <div class="slider-handle round" style="left: 75%"></div>
+                    </div>
+                    <div class="tooltip top" style="top: -14px; left: 0px">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">250 : 450</div>
+                    </div>
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="min-baths" style="" />
+                  </div>
+                  <br />
+                  <b class="pull-left color">1</b>
+                  <b class="pull-right color">120</b>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group mar-l-20">
+                  <label for="property-geo">Min bed :</label>
+                  <div class="sliderrange slider slider-horizontal" style="width: 100px">
+                    <div class="slider-track">
+                      <div class="slider-selection" style="left: 41.6667%; width: 33.3333%"></div>
+                      <div class="slider-handle round left-round" style="left: 41.6667%"></div>
+                      <div class="slider-handle round" style="left: 75%"></div>
+                    </div>
+                    <div class="tooltip top" style="top: -14px; left: 0px">
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">250 : 450</div>
+                    </div>
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="min-bed" style="" />
+                  </div>
+                  <br />
+                  <b class="pull-left color">1</b>
+                  <b class="pull-right color">120</b>
+                </div>
+                <!-- End of  -->
+              </div>
+              <br />
+              <div class="search-row">
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Fire Place(3100)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Dual Sinks(500)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Hurricane Shutters(99)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+              </div>
+
+              <div class="search-row">
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Swimming Pool(1190)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      2 Stories(4600)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Emergency Exit(200)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+              </div>
+
+              <div class="search-row">
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Laundry Room(10073)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      Jog Path(1503)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <div class="icheckbox_square-yellow" style="position: relative">
+                        <input
+                          type="checkbox"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        /><ins
+                          class="iCheck-helper"
+                          style="
+                            position: absolute;
+                            top: -20%;
+                            left: -20%;
+                            display: block;
+                            width: 140%;
+                            height: 140%;
+                            margin: 0px;
+                            padding: 0px;
+                            background: rgb(255, 255, 255);
+                            border: 0px;
+                            opacity: 0;
+                          "
+                        ></ins>
+                      </div>
+                      26' Ceilings(1200)
+                    </label>
+                  </div>
+                </div>
+                <!-- End of  -->
+                <br />
+                <hr />
+              </div>
+              <button class="btn search-btn prop-btm-sheaerch" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
