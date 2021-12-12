@@ -24,7 +24,11 @@
             <tr>
               <td>{{ngram.sequence}}</td>
               <td>{{ngram.frequency}}</td>
-              <td><button class="btn">Detail</button></td>
+              <td>
+                <button class="btn" data-toggle="modal" data-target="#ngram-modal" data-ngram-sequence="{{ngram.sequence}}">
+                  Detail
+                </button>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -178,5 +182,29 @@
   <br />
   <br />
   {% else %} job is in creation {% endif %}
+</div>
+
+
+
+<div class="modal fade" id="ngram-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        Display here
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock main %}
