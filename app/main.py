@@ -4,7 +4,11 @@ from werkzeug.utils import secure_filename
 from logic.upload_files import upload_file_to_gcs
 from logic.list_files import get_list_files
 from settings import _db
+import json
+from db import *
+
 load_dotenv()
+
 
 app = Flask(
     __name__,
@@ -14,9 +18,30 @@ app = Flask(
 
 app.secret_key = 'supersecretkey'
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
+        data = {
+            "from_date": request.form["from_date"], 
+            "to_date": request.form["to_date"], 
+            "source_type": request.form["source_type"], 
+            "sentiment": request.form["sentiment"], 
+            }
+        print(data)
+        query_dict_str = json.dumps(data)
+        job = get_jobs(query_dict_str)
+        if job == None:
+            new_job = make_job(query_dict_str)
+        else: 
+            return render_template('results.html', data=job)
+            
+        if new_job:
+            ngram = get_ngram(new_job)
+            return render_template('results.html', data=ngram)
+        
+        return render_template('index.html')
 
 @app.route('/ping')
 def ping():
@@ -57,11 +82,6 @@ def list_files():
 
     data = get_list_files()
 
-    return render_template('files_list.html', data=data)
-
-@app.route('/data',  methods=['POST', 'GET'])
-def jobs():
-    
     return render_template('files_list.html', data=data)
 
 
