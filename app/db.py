@@ -1,3 +1,4 @@
+import json
 from html import entities
 from settings import _db
 
@@ -13,11 +14,12 @@ def get_job(info):
 def get_jobs():
     sql = f"SELECT * FROM jobs WHERE type='nlp' ORDER BY frequency"
     _db.cur.execute(sql)
-    entities = _db.cur.fetchall()
-    if entities:
-        return entities
-    else:
-        return None
+    for entity in _db.cur.fetchall():
+        try:
+            entity["info"] = json.loads(entity["info"])
+        except:
+            continue
+        yield entity
 
 def get_lda(job_id, topic_id):
     sql = f"SELECT * FROM ldas WHERE job_id=%s AND topic_id=%s ORDER BY timestamp DESC LIMIT 100"

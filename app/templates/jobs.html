@@ -4,9 +4,12 @@
     <h2>Jobs</h2>
     <ul class="list-group">
       {% for job in data.jobs %}
-      <a href="/job/{{job.id}}">
-        <li class="list-group-item">Job #{{job.id}} - Type: {{job.type}} - Created at: {{job.timestamp}}</li>
-      </a>
+      <li class="list-group-item">
+        <a href="/job/{{job.id}}" class="link-unstyled">Job #{{job.id}}</a> Type: {{job.type}} - Created at: {{job.timestamp.strftime('%Y-%m-%d %H:%M:%S')}} <br/>
+        <small>From:</small> {{job.info['from_date']}},
+        <small>To:</small> {{job.info['to_date']}},
+        <small>Sources:</small> {{job.info['source_type']}}
+      </li>
       {% endfor %}
     </ul>
   </div>

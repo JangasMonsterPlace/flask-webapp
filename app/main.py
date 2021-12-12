@@ -27,8 +27,8 @@ def index():
 
 @app.route('/jobs', methods=['GET'])
 def jobs():
-    jobs = get_jobs()
-    data={"jobs":jobs}
+    jobs = list(get_jobs())
+    data = {"jobs": jobs}
     return render_template("jobs.html", data=data)
 
 @app.route('/job/<job_id>', methods=['GET'])
