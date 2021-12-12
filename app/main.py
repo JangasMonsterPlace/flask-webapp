@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 from logic.upload_files import upload_file_to_gcs
 from logic.list_files import get_list_files
-from settings import _db
+from settings import _db, es
 import json
 from db import *
 
@@ -124,6 +124,23 @@ def get_lda_endpoint():
     return data
 
 
+@app.route("/get-text-bodies-for-sequence", methods=["GET"])
+def get_tweets_by_keywords():
+    q = request.args.getlist("q")
+    query = {
+        "match": {
+            "text": {
+                "query": " ".join(q),
+                "operator": "and"
+            }
+        }
+    }
+    res = es.search(index="pg-textsource-texts", query=query, size=1000)
+    data = []
+    if len(res["hits"]['hits']) > 0:
+        data = [e["_source"] for e in res["hits"]['hits']]
+
+    return jsonify({"data": data})
 
 
 if __name__ == "__main__":

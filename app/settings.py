@@ -1,6 +1,7 @@
 import os
 import psycopg2
 import psycopg2.extras
+from elasticsearch import Elasticsearch
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,3 +31,8 @@ class _DB:
 
 
 _db = _DB()
+
+
+ES_URI = f"https://elastic:{os.getenv('ES_PASSWORD')}@{os.getenv('ES_URI')}"
+
+es = Elasticsearch([ES_URI])
