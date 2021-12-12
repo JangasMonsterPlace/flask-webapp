@@ -32,6 +32,15 @@ def jobs():
     return render_template("jobs.html", data=data)
 
 
+@app.route('/hastags', methods=['GET, POST'])
+def hashtags():
+    if request.method == 'GET':
+        return render_template('hastags.html')
+    else:
+        return redirect(f"/job/{job['id']}", code=302)
+
+
+
 @app.route('/job/<job_id>', methods=['GET'])
 @app.route('/job', methods=['POST'])
 def job(job_id=0):

@@ -1,4 +1,4 @@
-{% macro inline_category_form(job, category_id, cat_names) %} {{cat_names}} {% if cat_names %}
+{% macro inline_category_form(job, category_id, cat_names) %} {% if cat_names %}
 {% for dict_item in cat_names %}
 <form id="rename-category-{{category_id}}">
   <input hidden value="{{category_id}}" type="number" name="category_id" />
@@ -10,11 +10,30 @@
     </div>
     <div class="row mb-3">
       <label for="">Description</label>
-      <textarea value='{{dict_item["description"]}}' class="form-control cat-desc" name="description" id="" cols="30" rows="30"></textarea>
+      <textarea class="form-control cat-desc" name="description" id="" cols="30" rows="30">
+        {{dict_item["description"]}}
+      </textarea>
     </div>
 
     <button onclick="submitCategoryRenaming(category_id)" class="btn btn-default" on class="name-category-button" data-cat-id="{{category_id}}" type="button">Submit</button>
   </div>
 </form>
 {% endfor %}
+{% else %}
+<form id="rename-category-{{category_id}}">
+  <input hidden value="{{category_id}}" type="number" name="category_id" />
+  <input hidden class="job-id" value="{{job}}" type="number" name="job_id" />
+  <div class="form-group">
+    <div class="row mb-3">
+      <label for="">Name</label>
+      <input type="text" class="form-control cat-name" placeholder="Category name" />
+    </div>
+    <div class="row mb-3">
+      <label for="">Description</label>
+      <textarea class="form-control cat-desc" name="description" id="" cols="30" rows="30"></textarea>
+    </div>
+
+    <button onclick="submitCategoryRenaming(category_id)" class="btn btn-default" on class="name-category-button" data-cat-id="{{category_id}}" type="button">Submit</button>
+  </div>
+</form>
 {% endif %} {% endmacro %}
