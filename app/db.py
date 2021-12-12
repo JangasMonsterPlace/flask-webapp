@@ -5,7 +5,7 @@ def get_job(info):
     _db.cur.execute(sql, (info, ))
     entity = _db.cur.fetchone()
     if entity:
-        return entity[0]
+        return entity["id"]
     else:
         return None
 
