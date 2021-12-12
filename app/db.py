@@ -11,7 +11,7 @@ def get_job(info):
         return None
 
 def get_jobs():
-    sql = f"SELECT * FROM jobs ORDER BY frequency LIMIT 50"
+    sql = f"SELECT * FROM jobs WHERE type='nlp' ORDER BY frequency"
     _db.cur.execute(sql)
     entities = _db.cur.fetchall()
     if entities:

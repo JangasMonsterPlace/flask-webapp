@@ -30,8 +30,10 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5 mb-3">
     <h2>LDA</h2>
+  </div>
+  <div class="row mb-3">
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <a class="category-nav-link nav-item nav-link active" id="cat-one-tab" data-cat-id="1" data-toggle="tab" href="#cat-one" role="tab" aria-controls="cat-one" aria-selected="true">Category 1</a>
@@ -40,114 +42,111 @@
         <a class="category-nav-link nav-item nav-link" id="cat-four-tab" data-cat-id="4" data-toggle="tab" href="#cat-four" role="tab" aria-controls="cat-four" aria-selected="false">Category 4</a>
       </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="cat-one" role="tabpanel" aria-labelledby="cat-one-tab">
-        {{inline_category_form(data.job, 1)}}
-        <br>
-        <br>
-        <br>
-        <div class="">
-          <table id="table_id-1" class="display">
-            <thead>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 2</th>
-                <th>Column 2</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-              </tr>
-              <tr>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="cat-one" role="tabpanel" aria-labelledby="cat-one-tab">
+      {{inline_category_form(data.job, 1)}}
+      <div class="table">
+        <table id="table_id-1" class="display">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>job id</th>
+              <th>text</th>
+              <th>date</th>
+              <th>category id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="tab-pane fade" id="cat-two" role="tabpanel" aria-labelledby="cat-two-tab">  
-        {{inline_category_form(data.job, 2)}}
-        <div class="">
-            <table id="table_id-2" class="display">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Row 1 Data 1</td>
-                  <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                  <td>Row 2 Data 1</td>
-                  <td>Row 2 Data 2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
     </div>
-      <div class="tab-pane fade" id="cat-three" role="tabpanel" aria-labelledby="cat-three-tab">
-          {{inline_category_form(data.job, 3)}}
-          <div class="">
-            <table id="table_id-3" class="display">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Row 1 Data 1</td>
-                  <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                  <td>Row 2 Data 1</td>
-                  <td>Row 2 Data 2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      <div class="tab-pane fade" id="cat-four" role="tabpanel" aria-labelledby="cat-four-tab">
-          {{inline_category_form(data.job, 4)}}
-          <div class="">
-            <table id="table_id-4" class="display">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Row 1 Data 1</td>
-                  <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                  <td>Row 2 Data 1</td>
-                  <td>Row 2 Data 2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <div class="tab-pane fade" id="cat-two" role="tabpanel" aria-labelledby="cat-two-tab">
+      {{inline_category_form(data.job, 2)}}
+      <div class="table">
+        <table id="table_id-2" class="display">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>job id</th>
+              <th>text</th>
+              <th>date</th>
+              <th>category id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="cat-three" role="tabpanel" aria-labelledby="cat-three-tab">
+      {{inline_category_form(data.job, 3)}}
+      <div class="table">
+        <table id="table_id-3" class="display">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>job id</th>
+              <th>text</th>
+              <th>date</th>
+              <th>category id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="cat-four" role="tabpanel" aria-labelledby="cat-four-tab">
+      {{inline_category_form(data.job, 4)}}
+      <div class="table">
+        <table id="table_id-4" class="display">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>job id</th>
+              <th>text</th>
+              <th>date</th>
+              <th>category id</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <br />

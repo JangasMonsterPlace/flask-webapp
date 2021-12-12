@@ -19,12 +19,14 @@
 }
 
 .search-form {
+  width: 100%;
 }
 .wrap-form{
-  width: 80%;
+  width: 100%;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
+  background: white;
+  padding: 50px 100px;
 }
 .nav-link{
   transition: unset;
