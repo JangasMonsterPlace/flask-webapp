@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block main %}
+<div class="container">
+  <div class="row">
+    <form action="/hashtag" method="POST">
+      <div class="form-group">
+        <label for="hashtag">Hashtag</label>
+        <input type="text" class="form-control" id="hashtag" name="hashtag" placeholder="Enter hashtag" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="hastag-list">
+    <h2>Hashtags</h2>
+    {% if data.hashtags %}
+
+    <ul class="list-group">
+      {% for hashtag in data.hashtags %}
+      <li class="list-group-item">
+        <a href="#" class="link-unstyled">Hashtag #{{hashtag.id}}</a> {{ hashtag.info }} - Created at: {{hashtag.timestamp.strftime('%Y-%m-%d %H:%M:%S')}} <br />
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+{% endblock main %}

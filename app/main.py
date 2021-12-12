@@ -1,3 +1,4 @@
+from os import write
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
@@ -32,13 +33,21 @@ def jobs():
     return render_template("jobs.html", data=data)
 
 
-@app.route('/hastags', methods=['GET, POST'])
-def hashtags():
+@app.route('/hashtag',  methods=['GET', 'POST'])
+def hashtag():
     if request.method == 'GET':
-        return render_template('hastags.html')
+        data = {"hashtags": get_hashtag_jobs()}
+        print(data)
+        return render_template("hashtag.html", data=data)
     else:
-        return redirect(f"/job/{job['id']}", code=302)
+        data = {
+            "hashtag": request.form["hashtag"],
+            "type": "twitter",
+        }
+        query_dict_str = json.dumps(data)
 
+        make_job(data=query_dict_str, frequency=15, _type="hashtag")
+        return redirect(f"/hashtag", code=302)
 
 
 @app.route('/job/<job_id>', methods=['GET'])
@@ -56,7 +65,7 @@ def job(job_id=0):
                 "dimension_two": ngrams_dimension_two,
                 "dimension_three": ngrams_dimension_three,
             },
-            "category_names": {"cat_1": get_name_lda(job, 1), "cat_2": get_name_lda(job, 2),"cat_3":  get_name_lda(job, 3), "cat_4":  get_name_lda(job, 4)}
+            "category_names": {"cat_1": get_name_lda(job, 1), "cat_2": get_name_lda(job, 2), "cat_3":  get_name_lda(job, 3), "cat_4":  get_name_lda(job, 4)}
         }
         return render_template('results.html', data=return_data)
     elif request.method == 'POST':
@@ -160,7 +169,8 @@ def get_tweets_by_keywords():
             }
         }
     }
-    res = es.search(index="pg-textsource-texts", query=query, size=1000, aggs=aggs)
+    res = es.search(index="pg-textsource-texts",
+                    query=query, size=1000, aggs=aggs)
     data = []
     if len(res["hits"]['hits']) > 0:
         data = [e["_source"] for e in res["hits"]['hits']]
@@ -169,7 +179,8 @@ def get_tweets_by_keywords():
     try:
         buckets = res["aggregations"]["group_by_day"]["buckets"]
         for b in buckets:
-            parsed_buckets["dates"].append(b['key_as_string'].replace("T00:00:00.000Z", ""))
+            parsed_buckets["dates"].append(
+                b['key_as_string'].replace("T00:00:00.000Z", ""))
             parsed_buckets["values"].append(b['doc_count'])
 
     except Exception as e:
