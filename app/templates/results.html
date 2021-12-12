@@ -51,7 +51,11 @@
             <tr>
               <td>{{ngram.sequence}}</td>
               <td>{{ngram.frequency}}</td>
-              <td><button class="btn">Detail</button></td>
+              <td>
+                <button class="btn" name="ngram-detail" data-toggle="modal" data-target="#ngram-modal" data-ngram-sequence="{{ngram.sequence}}">
+                  Detail
+                </button>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
