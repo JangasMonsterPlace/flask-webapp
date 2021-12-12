@@ -20,8 +20,8 @@ def get_jobs():
         return None
 
 def get_lda(job_id, topic_id):
-    sql = f""
-    _db.cur.execute(sql)
+    sql = f"SELECT * FROM ldas WHERE job_id=%s AND topic_id=%s ORDER BY timestamp DESC LIMIT 100"
+    _db.cur.execute(sql, (job_id, topic_id))
     entities = _db.cur.fetchall()
     if entities:
         return entities

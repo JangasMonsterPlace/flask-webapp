@@ -106,9 +106,14 @@ def name_lda():
         }
 
 @app.route('/get_lda', methods=['GET'])
-def get_lda():
-    
-    return {"status": "ok"}
+def get_lda_endpoint():
+    job_id = request.args.get('job_id')
+    category_id = request.args.get('category_id')
+    lda = get_lda(job_id, category_id)
+    data = {
+        "lda": lda
+    }
+    return data
 
 
 
