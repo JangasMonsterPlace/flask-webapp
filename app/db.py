@@ -30,6 +30,10 @@ def get_lda(job_id, topic_id):
     else:
         return None
 
+def name_lda(job_id, topic_id, name, description):
+    sql = f"INSERT INTO INTO lda (job_id, topic_id, name, description) VALUES (%s, %s, %s, %s)"
+    _db.cur.execute(sql, (job_id, topic_id,name,  description))
+
 def make_job(data):
     sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"
     _db.cur.execute(sql, (data, ))

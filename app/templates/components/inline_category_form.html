@@ -1,16 +1,18 @@
 {% macro inline_category_form(job, category_id) %}
-<form action="/name_lda">
-    <input hidden value="{{category_id}}" type="number" name="category_id"/>
-    <input hidden value="{{job}}" type="number" name="job_id"/>
-    <div class="form-group">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button class="btn btn-default" class="name-category-button" type="button">Submit</button>
-          </span>
-          <input type="text" class="form-control" placeholder="Category name" />
-        </div>
-      </div>
+<form id="rename-category-{{category_id}}">
+  <input hidden value="{{category_id}}" type="number" name="category_id" />
+  <input hidden value="{{job}}" type="number" name="job_id" />
+  <div class="form-group">
+    <div class="row mb-3">
+      <label for="">Name</label>
+      <input type="text" class="form-control" placeholder="Category name" />
     </div>
-  </form>
+    <div class="row mb-3">
+      <label for="">Description</label>
+      <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <button class="btn btn-default" class="name-category-button" type="button">Submit</button>
+  </div>
+</form>
 {% endmacro %}

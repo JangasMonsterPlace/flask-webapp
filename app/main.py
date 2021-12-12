@@ -98,12 +98,20 @@ def list_files():
 
 
 @app.route('/name_lda')
-def name_lda():
-       data = {
-            "category_id": request.form["from_date"],
-            "job_id": request.form["to_date"],
-            "name": request.form["source_type"],
-        }
+def name_lda_endpoint():
+    data = {
+        "category_id": request.form["category_id"],
+        "job_id": request.form["job_id"],
+        "name": request.form["name"],
+        "description": request.form["description"]
+    }
+
+    name_lda(
+        request.json["job_id"],
+        request.json["category_id"],
+        request.json["name"],
+        request.json["description"],
+        )
 
 @app.route('/get_lda', methods=['GET'])
 def get_lda_endpoint():
@@ -114,6 +122,7 @@ def get_lda_endpoint():
         "lda": lda
     }
     return data
+
 
 
 
