@@ -18,6 +18,7 @@ app = Flask(
 
 app.secret_key = 'supersecretkey'
 
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
@@ -28,37 +29,39 @@ def index():
 def job(job_id=0):
     if request.method == 'GET':
         print(job_id)
-        job=job_id
-        ngrams = get_ngram(job_id)
-        print(ngrams)
+        job = job_id
+        ngrams_dimension_two = get_ngram(job_id, 2)
+        ngrams_dimension_three = get_ngram(job_id, 3)
         return_data = {
             "job": job,
-            "ngrams": ngrams
+            "ngrams": {
+                "dimension_two": ngrams_dimension_two, 
+                "dimension_three": ngrams_dimension_three
+                }
         }
         return render_template('results.html', data=return_data)
     elif request.method == 'POST':
         data = {
-            # "hastag": request.form["hashtag"], 
-            "from_date": request.form["from_date"], 
-            "to_date": request.form["to_date"], 
-            "source_type": request.form["source_type"], 
-            "sentiment": request.form["sentiment"], 
-            }
+            # "hastag": request.form["hashtag"],
+            "from_date": request.form["from_date"],
+            "to_date": request.form["to_date"],
+            "source_type": request.form["source_type"],
+            "sentiment": request.form["sentiment"],
+        }
         query_dict_str = json.dumps(data)
         job = get_jobs(query_dict_str)
         if job == None:
             make_job(query_dict_str)
             job = get_jobs(query_dict_str)
-        
+
         return redirect(f"/job/{job}", code=302)
 
-
-        
 
 @app.route('/ping')
 def ping():
 
     return jsonify({'status': 'ok'})
+
 
 @app.route('/upload_file', methods=['POST', 'GET'])
 def upload_files_route():
@@ -78,9 +81,9 @@ def upload_files_route():
             return render_template('upload.html', msg='Please upload a CSV file')
 
         file_data = f.read()
-        
+
         if f:
-                
+
             upload_file_to_gcs(filename, file_data)
 
             return render_template('upload.html', msg="File uploaded successfully")
@@ -89,14 +92,13 @@ def upload_files_route():
 
             return render_template('error.html')
 
+
 @app.route('/list_files')
 def list_files():
 
     data = get_list_files()
 
     return render_template('files_list.html', data=data)
-
-
 
 
 if __name__ == "__main__":

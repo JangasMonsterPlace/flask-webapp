@@ -13,7 +13,6 @@ def make_job(data):
     sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"
     _db.cur.execute(sql, (data, ))
 
-def get_ngram(prev_match_id):
-    # sql = f"SELECT dimension,squence,frequency FROM ngram WHERE job_id=%s AND dimension=2 ORDER BY frequency DESC LIMIT 10"
-    sql = f"SELECT * FROM ngram WHERE job_id=%s AND dimension=2 ORDER BY frequency DESC LIMIT 10"
-    return _db.cur.execute(sql, (prev_match_id, ))
+def get_ngram(prev_match_id, dimension):
+    sql = f"SELECT * FROM ngram WHERE job_id=%s AND dimension=%s ORDER BY frequency DESC LIMIT 10"
+    return _db.cur.execute(sql, (prev_match_id,dimension ))
