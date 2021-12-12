@@ -34,6 +34,15 @@ def name_lda(job_id, topic_id, name, description):
     sql = f"INSERT INTO lda_interpretation (job_id, topic_id, title, description) VALUES (%s, %s, %s, %s)"
     _db.cur.execute(sql, (job_id, topic_id,name,  description))
 
+def get_name_lda(job_id):
+    sql = f"SELECT * FROM lda_interpretation WHERE job_id=%s"
+    _db.cur.execute(sql, (job_id,))
+    entities = _db.cur.fetchall()
+    if entities:
+        return entities
+    else:
+        return None
+
 def make_job(data):
     sql = f"INSERT INTO jobs (type,info,frequency) VALUES ('nlp',%s,120)"
     _db.cur.execute(sql, (data, ))

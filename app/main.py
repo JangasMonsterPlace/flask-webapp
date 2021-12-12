@@ -40,12 +40,14 @@ def job(job_id=0):
         job = int(job_id)
         ngrams_dimension_two = get_ngram(job, 2)
         ngrams_dimension_three = get_ngram(job, 3)
+        category_names = get_name_lda(job)
         return_data = {
             "job": job,
             "ngrams": {
                 "dimension_two": ngrams_dimension_two,
-                "dimension_three": ngrams_dimension_three
-            }
+                "dimension_three": ngrams_dimension_three,
+            },
+                "category_names": category_names
         }
         return render_template('results.html', data=return_data)
     elif request.method == 'POST':
