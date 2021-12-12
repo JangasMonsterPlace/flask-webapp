@@ -1,50 +1,57 @@
 {% extends "base.html" %} {% block main %}
 <div class="search-header">
   <div class="container">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
-        <h2 class="text-white">Create job or get job</h2>
-        <div class="search-form " style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
-          <form method="POST" action="/job">
-            <div class="form-row">
-              <!-- <div class="form-group col-3">
+        <div class="row">
+          <h2 class="text-black mb-5">Create job or get job</h2>
+        </div>
+        <div class="row mt-5">
+          <div class="search-form mt-5" style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
+            <div class="wrap-form">
+              <form method="POST" action="/job">
+                <div class="form-row">
+                  <!-- <div class="form-group col-3">
                 <label for="hastag-input">Hastag</label>
                 <input name="hashtag" id="hastag-input" type="text" class="form-control" placeholder="Hashtag" />
               </div> -->
 
-              <div class="form-group col-3">
-                <select name="source_type" id="source" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select the data source" tabindex="-98">
-                  <option class="bs-title-option" value="">Select the data source</option>
-                  <option value="all">All sources</option>
-                  <option value="own">Own</option>
-                  <option value="external">Only external</option>
-                </select>
-              </div>
-              <div class="form-group col-3">
-                <select name="sentiment" id="sentiment" class="selectpicker form-control" data-live-search="true"  data-live-search-style="begins" title="Select the sentiment" tabindex="-98">
-                  <option value="">Sentiment</option>
-                  <option value="all">All</option>
-                  <option value="own">Own</option>
-                  <option value="bad">Bad</option>
-                </select>
-              </div>
-              <div class="col-3">
-                <button class="btn search-btn form-control" type="submit"><i class="fa fa-search"></i></button>
-              </div>
+                  <div class="form-group col-3">
+                    <select name="source_type" id="source" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select the data source" tabindex="-98">
+                      <option class="bs-title-option" value="">Select the data source</option>
+                      <option value="all">All sources</option>
+                      <option value="own">Own</option>
+                      <option value="external">Only external</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-3">
+                    <select name="sentiment" id="sentiment" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select the sentiment" tabindex="-98">
+                      <option value="">Sentiment</option>
+                      <option value="all">All</option>
+                      <option value="own">Own</option>
+                      <option value="bad">Bad</option>
+                    </select>
+                  </div>
+                  <div class="col-3">
+                    <button class="btn search-btn form-control" type="submit"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="to_date-input">Start Date</label>
+                    <input type="date" name="to_date" id="to_date-input" />
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="from_date-input">End Date</label>
+                    <input type="date" name="from_date" id="from_date-input" />
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="form-row">
-              <div class="form-group col-6">
-                <label for="to_date-input">Start Date</label>
-                <input type="date" name="to_date" id="to_date-input" />
-              </div>
-              <div class="form-group col-6">
-                <label for="from_date-input">End Date</label>
-                <input type="date" name="from_date" id="from_date-input" />
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
+      </div>
     </div>
   </div>
+  {% endblock %}
 </div>
-{% endblock %}
