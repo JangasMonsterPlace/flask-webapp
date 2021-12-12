@@ -59,10 +59,10 @@ def list_files():
 
     return render_template('files_list.html', data=data)
 
-# @app.route('/data',  methods=['POST', 'GET'])
-# def jobs():
+@app.route('/data',  methods=['POST', 'GET'])
+def jobs():
     
-#     return render_template('files_list.html', data=data)
+    return render_template('files_list.html', data=data)
 
 
 
