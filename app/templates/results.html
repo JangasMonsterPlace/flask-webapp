@@ -98,7 +98,7 @@
       </table>
     </div>
     <div class="tab-pane fade" id="cat-two" role="tabpanel" aria-labelledby="cat-two-tab">
-      {{inline_category_form(data.job, 2)}}
+      {{inline_category_form(data.job, 2, cat_names=data.category_names[2])}}
       <div class="table">
         <table id="table_id-2" class="display">
           <thead>
@@ -124,7 +124,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="cat-three" role="tabpanel" aria-labelledby="cat-three-tab">
-      {{inline_category_form(data.job, 3)}}
+      {{inline_category_form(data.job, 3, cat_names=data.category_names[3])}}
       <div class="table">
         <table id="table_id-3" class="display">
           <thead>
@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="cat-four" role="tabpanel" aria-labelledby="cat-four-tab">
-      {{inline_category_form(data.job, 4)}}
+      {{inline_category_form(data.job, 4, cat_names=data.category_names[4])}}
       <div class="table">
         <table id="table_id-4" class="display">
           <thead>
