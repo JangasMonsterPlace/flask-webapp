@@ -11,21 +11,47 @@
     <div class="col">
       <div class="ngram_two_dimensions">
         <h2>Two dimensions</h2>
-        <ul class="list-group">
-          {% for ngram in data.ngrams.dimension_two %}
-          <li class="list-group-item">{{ngram.sequence}}: {{ngram.frequency}}</li>
-          {% endfor %}
-        </ul>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Sequence</th>
+              <th scope="col">Frequency</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ngram in data.ngrams.dimension_two %}
+            <tr>
+              <td>{{ngram.sequence}}</td>
+              <td>{{ngram.frequency}}</td>
+              <td><button class="btn">Detail</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="col">
       <div class="ngram_three_dimensions">
         <h3>Three dimensions</h3>
-        <ul class="list-group">
-          {% for ngram in data.ngrams.dimension_three %}
-          <li class="list-group-item">{{ngram.sequence}}: {{ngram.frequency}}</li>
-          {% endfor %}
-        </ul>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Sequence</th>
+              <th scope="col">Frequency</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ngram in data.ngrams.dimension_three %}
+            <tr>
+              <td>{{ngram.sequence}}</td>
+              <td>{{ngram.frequency}}</td>
+              <td><button class="btn">Detail</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
