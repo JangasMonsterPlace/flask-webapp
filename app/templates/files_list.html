@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block main %}
-    
+    {{data}}
 
-    {% for name in data %}
+    {% for file in data.files %}
     
-    <p>{{name}}</p>
+    <p>{{file}}</p>
     
     {% endfor %}
 

@@ -1,39 +1,10 @@
 {% extends "base.html" %} {% block main %}
-<div class="slider-area">
-  <div class="slider">
-    <div id="bg-slider" class="owl-carousel owl-theme" style="opacity: 1; display: block">
-      <div class="owl-wrapper-outer">
-        <div
-          class="owl-wrapper owl-origin"
-          style="width: 11418px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px); transform-origin: 951.5px center; perspective-origin: 951.5px center"
-        >
-          <div class="owl-item owl-fade-in" style="width: 1903px">
-            <div class="item"><img src="static/assets/img/slide1/slider-image-1.jpg" alt="GTA V" /></div>
-          </div>
-          <div class="owl-item" style="width: 1903px">
-            <div class="item"><img src="static/assets/img/slide1/slider-image-2.jpg" alt="The Last of us" /></div>
-          </div>
-          <div class="owl-item owl-fade-out" style="width: 1903px; position: relative; left: -3806px">
-            <div class="item"><img src="static/assets/img/slide1/slider-image-1.jpg" alt="GTA V" /></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="owl-controls clickable">
-        <div class="owl-pagination">
-          <div class="owl-page active"><span class=""></span></div>
-          <div class="owl-page"><span class=""></span></div>
-          <div class="owl-page"><span class=""></span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-content">
+<div class="search-header">
+  <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
-        <h2>property Searching Just Got So Easy</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laboriosam velit adipisci quibusdam aliquam teneturo!</p>
-        <div class="search-form wow pulse animated" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
+        <h2 class="text-white">Create job or get job</h2>
+        <div class="search-form " style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
           <form method="POST" action="/job">
             <div class="form-row">
               <!-- <div class="form-group col-3">
@@ -42,7 +13,7 @@
               </div> -->
 
               <div class="form-group col-3">
-                <select name="source_type" id="lunchBegins" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select your city" tabindex="-98">
+                <select name="source_type" id="source" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select the data source" tabindex="-98">
                   <option class="bs-title-option" value="">Select the data source</option>
                   <option value="all">All sources</option>
                   <option value="own">Own</option>
@@ -50,7 +21,7 @@
                 </select>
               </div>
               <div class="form-group col-3">
-                <select  name="sentiment" id="basic" class="selectpicker show-tick form-control" tabindex="-98">
+                <select name="sentiment" id="sentiment" class="selectpicker form-control" data-live-search="true"  data-live-search-style="begins" title="Select the sentiment" tabindex="-98">
                   <option value="">Sentiment</option>
                   <option value="all">All</option>
                   <option value="own">Own</option>
@@ -73,7 +44,6 @@
             </div>
           </form>
         </div>
-      </div>
     </div>
   </div>
 </div>

@@ -66,45 +66,34 @@ def job(job_id=0):
 
 @app.route('/ping')
 def ping():
-
     return jsonify({'status': 'ok'})
 
 
 @app.route('/upload_file', methods=['POST', 'GET'])
 def upload_files_route():
-
     if request.method == 'GET':
-
         return render_template('upload.html')
 
     if request.method == 'POST':
-
         f = request.files['file']
-
         filename = secure_filename(f.filename)
 
         if not filename.endswith('.csv'):
-
             return render_template('upload.html', msg='Please upload a CSV file')
 
         file_data = f.read()
 
         if f:
-
             upload_file_to_gcs(filename, file_data)
-
             return render_template('upload.html', msg="File uploaded successfully")
 
         else:
-
             return render_template('error.html')
 
 
 @app.route('/list_files')
 def list_files():
-
-    data = get_list_files()
-
+    data = {"files": get_list_files()}
     return render_template('files_list.html', data=data)
 
 
