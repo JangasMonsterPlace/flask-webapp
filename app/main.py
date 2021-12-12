@@ -27,11 +27,13 @@ def index():
 @app.route('/job', methods=['POST'])
 def job(job_id=0):
     if request.method == 'GET':
+        print(job_id)
         job=job_id
-        ngram = get_ngram(job_id)
+        ngrams = get_ngram(job_id)
+        print(ngrams)
         return_data = {
             "job": job,
-            "ngram": ngram
+            "ngrams": ngrams
         }
         return render_template('results.html', data=return_data)
     elif request.method == 'POST':
