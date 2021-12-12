@@ -29,22 +29,17 @@ navItems.forEach((item) => {
 });
 
 // handle category naming
-const categorySubmitBtn = document.querySelectorAll('.name-category-button');
-
-categorySubmitBtn.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const categoryId = btn.getAttribute('data-category-id');
-    const categoryName = document.querySelector(`#category-name-${categoryId}`).value;
-    console.log(categoryName);
-    $.post('/name_lda', { category_id: categoryId, name: categoryName, description: description }, function (data, status) {
-      console.log(data, status);
-      if (data.success) {
-        alert('Category name updated');
-        location.reload();
-      } else {
-        alert('Error updating category name');
-      }
-    });
+const submitCategoryRenaming = (input) => {
+  console.log('click');
+  const form = document.querySelector(`#rename-category-${input.value}`);
+  console.log(form);
+  $.post('/name_lda', { category_id: categoryId, name: categoryName, description: description }, function (data, status) {
+    console.log(data, status);
+    if (data.success) {
+      alert('Category name updated');
+      location.reload();
+    } else {
+      alert('Error updating category name');
+    }
   });
-});
+};

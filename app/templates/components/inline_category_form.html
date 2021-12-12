@@ -9,10 +9,10 @@
     </div>
     <div class="row mb-3">
       <label for="">Description</label>
-      <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+      <textarea class="form-control" name="description" id="" cols="30" rows="30"></textarea>
     </div>
-
-    <button class="btn btn-default" class="name-category-button" type="button">Submit</button>
+    
+    <button onclick="submitCategoryRenaming(category_id)" class="btn btn-default" on class="name-category-button" data-cat-id="{{category_id}}" type="button">Submit</button>
   </div>
 </form>
 {% endmacro %}
