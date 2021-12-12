@@ -6,3 +6,4 @@ __pycache__/
 venv/
 virtualenv/
 google-cloude-cred.json
+.google-service-account-file.json
