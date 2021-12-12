@@ -25,7 +25,7 @@
               <td>{{ngram.sequence}}</td>
               <td>{{ngram.frequency}}</td>
               <td>
-                <button class="btn" data-toggle="modal" data-target="#ngram-modal" data-ngram-sequence="{{ngram.sequence}}">
+                <button class="btn" name="ngram-detail" data-toggle="modal" data-target="#ngram-modal" data-ngram-sequence="{{ngram.sequence}}">
                   Detail
                 </button>
               </td>
@@ -187,7 +187,7 @@
 
 
 <div class="modal fade" id="ngram-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">New message</h5>
@@ -196,8 +196,9 @@
         </button>
       </div>
       <div class="modal-body">
+        <span id="ngram-detail-ts-plot"></span>
 
-        Display here
+
 
       </div>
       <div class="modal-footer">

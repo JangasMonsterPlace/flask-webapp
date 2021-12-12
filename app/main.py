@@ -136,12 +136,40 @@ def get_tweets_by_keywords():
             }
         }
     }
-    res = es.search(index="pg-textsource-texts", query=query, size=1000)
+    aggs = {
+        "group_by_day": {
+            "date_histogram": {
+                "field": "written_by_user_at",
+                "interval": "day"
+            },
+            "aggs": {
+                "group_by_day": {
+                    "sum": {
+                        "script": "1"
+                    }
+                }
+            }
+        }
+    }
+    res = es.search(index="pg-textsource-texts", query=query, size=1000, aggs=aggs)
     data = []
     if len(res["hits"]['hits']) > 0:
         data = [e["_source"] for e in res["hits"]['hits']]
 
-    return jsonify({"data": data})
+    parsed_buckets = {"dates": [], "values": []}
+    try:
+        buckets = res["aggregations"]["group_by_day"]["buckets"]
+        for b in buckets:
+            parsed_buckets["dates"].append(b['key_as_string'].replace("T00:00:00.000Z", ""))
+            parsed_buckets["values"].append(b['doc_count'])
+
+    except Exception as e:
+        buckets = []
+
+    return jsonify({
+        "raw_text_data": data,
+        "time_aggregated_data": parsed_buckets
+    })
 
 
 if __name__ == "__main__":

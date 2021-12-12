@@ -48,3 +48,34 @@ const submitCategoryRenaming = (input) => {
     }
   });
 };
+
+
+$( "[name=ngram-detail]" ).click(function(){
+  console.log($(this).attr("data-ngram-sequence"))
+
+  var data = [
+    {
+      x: ['2013-10-04 22:23:00', '2013-11-04 22:23:00', '2013-12-04 22:23:00'],
+      y: [1, 3, 6],
+      type: 'scatter'
+    }
+  ];
+
+
+
+
+  $.ajax({
+    url: "/get-text-bodies-for-sequence?q=hong&q=kong",
+    success: function(data){
+      console.log(data)
+      var time_series = [
+        {
+          x: data.time_aggregated_data.dates,
+          y: data.time_aggregated_data.values,
+          type: 'scatter'
+        }
+      ]
+      Plotly.newPlot('ngram-detail-ts-plot', time_series);
+    }
+  })
+})
