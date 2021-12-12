@@ -31,6 +31,7 @@ def jobs():
     data = {"jobs": jobs}
     return render_template("jobs.html", data=data)
 
+
 @app.route('/job/<job_id>', methods=['GET'])
 @app.route('/job', methods=['POST'])
 def job(job_id=0):
@@ -42,9 +43,9 @@ def job(job_id=0):
         return_data = {
             "job": job,
             "ngrams": {
-                "dimension_two": ngrams_dimension_two, 
+                "dimension_two": ngrams_dimension_two,
                 "dimension_three": ngrams_dimension_three
-                }
+            }
         }
         return render_template('results.html', data=return_data)
     elif request.method == 'POST':
@@ -97,21 +98,19 @@ def list_files():
     return render_template('files_list.html', data=data)
 
 
-@app.route('/name_lda')
+@app.route('/name_lda', methods=['POST'])
 def name_lda_endpoint():
-    data = {
-        "category_id": request.form["category_id"],
-        "job_id": request.form["job_id"],
-        "name": request.form["name"],
-        "description": request.form["description"]
-    }
-
-    name_lda(
-        request.json["job_id"],
-        request.json["category_id"],
-        request.json["name"],
-        request.json["description"],
+    try:
+        name_lda(
+            request.form["job_id"],
+            request.form["category_id"],
+            request.form["name"],
+            request.form["description"],
         )
+        return jsonify({'status': '201'})
+    except Exception as e:
+        return jsonify({"error": str(e), "status": "400"})
+
 
 @app.route('/get_lda', methods=['GET'])
 def get_lda_endpoint():

@@ -31,7 +31,7 @@ def get_lda(job_id, topic_id):
         return None
 
 def name_lda(job_id, topic_id, name, description):
-    sql = f"INSERT INTO INTO lda (job_id, topic_id, name, description) VALUES (%s, %s, %s, %s)"
+    sql = f"INSERT INTO lda_interpretation (job_id, topic_id, title, description) VALUES (%s, %s, %s, %s)"
     _db.cur.execute(sql, (job_id, topic_id,name,  description))
 
 def make_job(data):

@@ -33,9 +33,14 @@ const submitCategoryRenaming = (input) => {
   console.log('click');
   const form = document.querySelector(`#rename-category-${input.value}`);
   console.log(form);
-  $.post('/name_lda', { category_id: categoryId, name: categoryName, description: description }, function (data, status) {
+  const categoryName = form.querySelector('.cat-name').value;
+  const description = form.querySelector('.cat-desc').value;
+  const jobId = form.querySelector('.job-id').value;
+  console.log({ job_id: jobId, category_id: input.value, name: categoryName, description: description });
+
+  $.post('/name_lda', { job_id: jobId, category_id: input.value, name: categoryName, description: description }, function (data, status) {
     console.log(data, status);
-    if (data.success) {
+    if (data.status === '201') {
       alert('Category name updated');
       location.reload();
     } else {
