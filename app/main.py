@@ -18,30 +18,40 @@ app = Flask(
 
 app.secret_key = 'supersecretkey'
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET'])
 def index():
+    return render_template('index.html')
+
+
+@app.route('/job/<job_id>', methods=['GET'])
+@app.route('/job', methods=['POST'])
+def job(job_id=0):
     if request.method == 'GET':
-        return render_template('index.html')
+        job=job_id
+        ngram = get_ngram(job_id)
+        return_data = {
+            "job": job,
+            "ngram": ngram
+        }
+        return render_template('results.html', data=return_data)
     elif request.method == 'POST':
         data = {
+            # "hastag": request.form["hashtag"], 
             "from_date": request.form["from_date"], 
             "to_date": request.form["to_date"], 
             "source_type": request.form["source_type"], 
             "sentiment": request.form["sentiment"], 
             }
-        print(data)
         query_dict_str = json.dumps(data)
         job = get_jobs(query_dict_str)
         if job == None:
-            new_job = make_job(query_dict_str)
-        else: 
-            return render_template('results.html', data=job)
-            
-        if new_job:
-            ngram = get_ngram(new_job)
-            return render_template('results.html', data=ngram)
+            make_job(query_dict_str)
+            job = get_jobs(query_dict_str)
         
-        return render_template('index.html')
+        return redirect(f"/job/{job}", code=302)
+
+
+        
 
 @app.route('/ping')
 def ping():

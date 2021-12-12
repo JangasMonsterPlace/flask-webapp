@@ -34,12 +34,12 @@
         <h2>property Searching Just Got So Easy</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi deserunt deleniti, ullam commodi sit ipsam laboriosam velit adipisci quibusdam aliquam teneturo!</p>
         <div class="search-form wow pulse animated" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: pulse">
-          <form method="POST" action="/">
+          <form method="POST" action="/job">
             <div class="form-row">
-              <div class="form-group col-3">
+              <!-- <div class="form-group col-3">
                 <label for="hastag-input">Hastag</label>
-                <input id="hastag-input" type="text" class="form-control" placeholder="Hashtag" />
-              </div>
+                <input name="hashtag" id="hastag-input" type="text" class="form-control" placeholder="Hashtag" />
+              </div> -->
 
               <div class="form-group col-3">
                 <select name="source_type" id="lunchBegins" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select your city" tabindex="-98">
@@ -63,11 +63,11 @@
             </div>
             <div class="form-row">
               <div class="form-group col-6">
-                <label for="to_date-input"></label>
+                <label for="to_date-input">Start Date</label>
                 <input type="date" name="to_date" id="to_date-input" />
               </div>
               <div class="form-group col-6">
-                <label for="from_date-input"></label>
+                <label for="from_date-input">End Date</label>
                 <input type="date" name="from_date" id="from_date-input" />
               </div>
             </div>

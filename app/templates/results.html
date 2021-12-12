@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block main %}
+<div class="container">
+  {% if data.job != None %}
+  <div class="row">
+      <h1>Job with id #{{data.job}}</h1>
+  </div>
+  <div class="row">
+      <h2>Ngrams</h2>
+  </div>
+  <div class="row">
+      <div>{{data.ngrams}}</div>
+  </div>
+  {% else %} job is in creation {% endif %}
+</div>
+{% endblock main %}
